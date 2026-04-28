@@ -161,8 +161,7 @@ PROCESS=$(pgrep bind | wc -l)
 echo "'Server $SERVER with IP $IP ' entry has been removed successfully..."
 echo "Zone file is $CHK_ZONEFILE FYI... the Zone file value should be equal to 952"
 echo "Bind process count is $PROCESS FYI... the Bind process count should be 1."
-#mail -s 'DNS Update: From SFO-PN1-DNS201' kbb@quotient.com < "$DESTINATION/DNS-$TIMESTAMP.txt"
-mail -s 'DNS Update: From SFO-PN1-DNS201' noc-alerts@quotient.com < "$DESTINATION/DNS-$TIMESTAMP.txt"
+mail -s 'DNS Update: From SFO-PN1-DNS201' kbb@gmail.com < "$DESTINATION/DNS-$TIMESTAMP.txt"
 else
 mv $CONF_FILE $RENAME
 mv $BACKUP_FILE $REPLACE
@@ -173,8 +172,7 @@ echo "   $SERIAL_COUNT             $NEWSERIAL_COUNT" >> $DESTINATION/DNS_error-$
 echo "                                " >> $DESTINATION/DNS_error-$TIMESTAMP.txt
 echo "Tried removing the Server $SERVER entry with IP $IP, something went wrong..! Reverted the changes."
 echo "Tried removing the Server $SERVER entry with IP $IP, something went wrong..! Reverted the changes." >> $DESTINATION/DNS_error-$TIMESTAMP.txt
-#mail -s "DNS WARNING: From SFO-PN1-DNS201 Something went wrong..!" kbb@quotient.com < "$DESTINATION/DNS_error-$TIMESTAMP.txt"
-mail -s "DNS WARNING: From SFO-PN1-DNS201 Something went wrong..!" noc-alerts@quotient.com < "$DESTINATION/DNS_error-$TIMESTAMP.txt"
+mail -s "DNS WARNING: From SFO-PN1-DNS201 Something went wrong..!" kbb@gmail.com < "$DESTINATION/DNS_error-$TIMESTAMP.txt"
 fi
 fi
 
